@@ -4,14 +4,16 @@ namespace App\Entity;
 
 use App\Repository\IngredientRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: IngredientRepository::class)]
+#[UniqueEntity('name')]
 class Ingredient
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
-    #[ORM\Column]
+    #[ORM\Column(type: 'integer')]
     private ?int $id = null;
 
     #[ORM\Column(length: 50)]
@@ -22,7 +24,7 @@ class Ingredient
     #[ORM\Column]
     #[Assert\NotNull()]
     #[Assert\Positive()]
-    #[Assert\LessThan(50)]
+    #[Assert\LessThan(200)]
     private ?float $price = null;
 
     #[ORM\Column]
