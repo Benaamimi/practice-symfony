@@ -1,0 +1,71 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Modifier - des recettes
+{% endblock %}
+
+{% block body %}
+
+	<class="containermt-4">
+		<h1>Modification d'une recette</h1>
+
+		{{ form_start(form) }}
+
+		<div class="form-group">
+			{{ form_label(form.name) }}
+			{{ form_widget(form.name) }}
+			<div class="form-errors"></div>
+			{{ form_errors(form.name) }}
+		</div>
+
+		<div class="form-group">
+			{{ form_label(form.time) }}
+			{{ form_widget(form.time) }}
+			<div class="form-errors"></div>
+			{{ form_errors(form.time) }}
+		</div>
+
+		<div class="form-group">
+			{{ form_label(form.nbPersonne) }}
+			{{ form_widget(form.nbPersonne) }}
+			<div class="form-errors"></div>
+			{{ form_errors(form.nbPersonne) }}
+		</div>
+
+		<div class="form-group">
+			{{ form_label(form.difficulty) }}
+			{{ form_widget(form.difficulty) }}
+			<div class="form-errors"></div>
+			{{ form_errors(form.difficulty) }}
+		</div>
+
+		<div class="form-group">
+			{{ form_label(form.description) }}
+			{{ form_widget(form.description) }}
+			<div class="form-errors"></div>
+			{{ form_errors(form.description) }}
+		</div>
+
+		<div class="form-group">
+			{{ form_label(form.price) }}
+			{{ form_widget(form.price) }}
+			<div class="form-errors"></div>
+			{{ form_errors(form.price) }}
+		</div>
+
+
+		<div class="form-check mt-4">
+			{{ form_widget(form.isFavorite) }}
+			{{ form_label(form.isFavorite) }}
+		</div>
+
+
+		{{ form_row (form.ingredient) }}
+
+		<div class="form-group">
+			<button type="submit" class="btn btn-primary mt-4">Modifier une recette</button>
+		</div>
+
+		{{ form_end(form) }}
+
+	</div>
+{% endblock %}

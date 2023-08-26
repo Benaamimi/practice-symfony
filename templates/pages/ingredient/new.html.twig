@@ -1,5 +1,8 @@
 {% extends "base.html.twig" %}
 
+{% block title %}SymRecipe - Nouveau ingredient{% endblock %}
+
+
 {% block body %}
 
 	<div class="container mt-4">
@@ -8,6 +11,7 @@
 				{{ message }}
 			</div>
 		{% endfor %}
+		
 		<h1>Création d'un igrédient</h1>
 
 		{{ form_start(form) }}

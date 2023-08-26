@@ -23,7 +23,6 @@ class IngredientController extends AbstractController
      * @param Request $request
      * @return Response
      */
-    #[route('ingredient/edition/{id}', 'ingredient.edit', methods: ['GET', 'POST'])]
     #[Route('/ingredient', name: 'ingredient.index', methods: ['GET'])]
     public function index(IngredientRepository $repository, PaginatorInterface $paginator, Request $request): Response
     {
@@ -79,6 +78,13 @@ class IngredientController extends AbstractController
         ]);
     }
 
+    /**
+     * this controller to edit ingredient
+     *
+     * @param Request $request
+     * @param EntityManagerInterface $manager
+     * @return Response
+     */
     #[Route('/ingredient/edition/{id}', 'ingredient.edit', methods: ['GET', 'POST'])]
     public function edit(IngredientRepository $repo, int $id, EntityManagerInterface $manager, Request $request): Response
     {
@@ -109,6 +115,15 @@ class IngredientController extends AbstractController
         ]);
     }
 
+   
+    /**
+     * this controller delete ingredients
+     *
+     * @param IngredientRepository $repo
+     * @param integer $id
+     * @param EntityManagerInterface $manager
+     * @return Response
+     */
     #[Route('/ingredient/suppression/{id}', 'ingredient.delete', methods: ['GET'])]
     public function delete(IngredientRepository $repo, int $id, EntityManagerInterface $manager ): Response
     {
