@@ -12,7 +12,7 @@
 			</div>
 		{% endfor %}
 		{% if not ingredients.items is same as([]) %}
-		<a href="{{ path('ingredient.new') }}" class="btn btn-secondary my-4">Ajouter un ingredient</a>
+		<a href="{{ path('ingredient.new') }}" class="btn btn-primary my-4">Ajouter un ingredient</a>
 
 			<div class="count">
 				<h4>Il y a
@@ -33,7 +33,7 @@
 				</thead>
 				<tbody>
 					{% for ingredient in ingredients %}
-						<tr class="table-secondary">
+						<tr class="table-primary">
 							<th scope="row">{{ ingredient.id }}</th>
 							<td>{{ ingredient.name }}</td>
 							<td>{{ ingredient.price }}</td>
